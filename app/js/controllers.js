@@ -21,6 +21,23 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
         }
       }
       $scope.phones.splice(index, 1);
+      console.log(index);
+    }
+
+    //function for adding phones//
+    $scope.addPhone = function() {
+      $scope.newPhone.id = $scope.newPhone.name.toLowerCase().split(' ').join('-');
+
+      var maxPhoneAge = 0;
+      for (var i = 0; i < $scope.phones.length - 1; i++) {
+        if ($scope.phones[i].age > maxPhoneAge) {
+          maxPhoneAge = $scope.phones[i].age;
+        }
+      }
+
+      $scope.newPhone.age = maxPhoneAge + 1;
+      $scope.phones.push($scope.newPhone);
+      $scope.newPhone = null;
     }
 
   }]);
