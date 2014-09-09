@@ -12,16 +12,17 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     //function for deleting phones//
     $scope.deletePhone = function(phone) {
       // console.log(phone.age);
-      // console.log($scope.phones);
-      var index = 0;
+      console.log($scope.phones);
+      console.log(phone.id);
+
       for (var i = 0; i < $scope.phones.length - 1; i++) {
         if ($scope.phones[i].id === phone.id) {
-          index = i;
           break;
         }
       }
-      $scope.phones.splice(index, 1);
-      console.log(index);
+
+      $scope.phones.splice(i, 1);
+      console.log(i);
     }
 
     //function for adding phones//
