@@ -20,7 +20,6 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
           break;
         }
       }
-      console.log(index);
       $scope.phones.splice(index, 1);
     }
 
