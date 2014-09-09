@@ -29,14 +29,14 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     $scope.addPhone = function() {
       $scope.newPhone.id = $scope.newPhone.name.toLowerCase().split(' ').join('-');
 
-      var maxPhoneAge = 0;
+      var max = 0;
       for (var i = 0; i < $scope.phones.length - 1; i++) {
-        if ($scope.phones[i].age > maxPhoneAge) {
-          maxPhoneAge = $scope.phones[i].age;
+        if ($scope.phones[i].age > max) {
+          max = $scope.phones[i].age;
         }
       }
 
-      $scope.newPhone.age = maxPhoneAge + 1;
+      $scope.newPhone.age = max + 1;
       $scope.phones.push($scope.newPhone);
       $scope.newPhone = null;
     }
