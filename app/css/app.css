@@ -29,7 +29,7 @@ body {
 .phones li {
   clear: both;
   height: 115px;
-  padding-top: 15px;
+  padding: 15px 5px;
 }
 
 /** Detail View **/
@@ -99,5 +99,7 @@ h1 {
 }
 
 .delete-phone {
-
+  float: right;
+  color: #7F0000;
+  cursor: pointer;
 }
